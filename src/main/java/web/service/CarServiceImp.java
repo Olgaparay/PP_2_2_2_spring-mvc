@@ -1,20 +1,20 @@
 package web.service;
 
+import org.springframework.stereotype.Service;
 import web.model.Car;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-
+@Service
 public class CarServiceImp implements CarService{
-    private final List<Car> cars = new ArrayList<>();//сохраняем список машин
-
-    public CarServiceImp() {
-        cars.add(new Car(1, "Camry", "white"));
-        cars.add(new Car(2, "Camry", "black"));
-        cars.add(new Car(3, "Ford", "blue"));
-        cars.add(new Car(4, "BMW", "white"));
-        cars.add(new Car(5, "Nissan", "green"));
-    } //конструктор для добавления машин в сервис
+    private List<Car> cars = Arrays.asList(
+            new Car(1, "BMW", "Red"),
+            new Car(2, "BMW", "Blue"),
+            new Car(3, "Civic", "White"),
+            new Car(4, "Camry", "Black"),
+            new Car(5, "BMW", "Green")
+    );
 
     @Override
     public List<Car> getCars(int count) {
