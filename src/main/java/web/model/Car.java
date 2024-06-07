@@ -4,6 +4,9 @@ public class Car {
     private int num;
     private String model;
     private String color;
+    public Car(){
+
+    }
 
     public Car(int num, String model, String color) {
         this.num = num;
@@ -35,12 +38,4 @@ public class Car {
         this.color = color;
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "num=" + num +
-                ", model='" + model + '\'' +
-                ", color='" + color + '\'' +
-                '}';
-    }
 }
