@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import web.model.Car;
 import web.service.CarService;
@@ -18,11 +19,9 @@ public class CarController {
         this.carService = carService;// внедняем зависимость сервиса машин
     }
     @GetMapping("/cars")
-    public String getCars(@RequestParam(name = "count",required = false,defaultValue = "5")
-                              int count, Model model){
-        List<Car> cars = carService.getCars(count);//получаем список машин из сервиса
-        model.addAttribute("cars",cars);//ередача списка в модель для отображения
-        return "cars";//имя представления возвращаем
+    public String getCars(@RequestParam(value = "count", defaultValue = "5") int count, Model model) {
+        model.addAttribute("cars", carService.getCars(count));
+        return "cars";
     }
 
 }
