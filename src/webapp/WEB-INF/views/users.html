@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>All Users</title>
@@ -9,11 +11,10 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Username</th>
         <th>Age</th>
         <th>Operations</th>
     </tr>
-    <tr th:each="user : ${allUsers}">
+    <tr th:each="user : ${users}">
         <td th:text="${user.id}"/>
         <td th:text="${user.name}"/>
         <td th:text="${user.age}"/>
