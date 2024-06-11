@@ -13,7 +13,7 @@ public class UserDaoImp implements UserDao{
 
     @Override
     public List<User> getAllUsers() {
-        return em.createQuery("select u from User u", User.class).getResultList();
+        return em.createQuery("select u from Users u", User.class).getResultList();
     }
 
     @Override
